@@ -1,0 +1,1216 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+    --primary: #4f8cff;
+    --primary-dark: #2563eb;
+
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+
+    --success: #22c55e;
+
+    --background: #020617;
+
+    --surface: rgba(15, 23, 42, 0.78);
+
+    --surface-light: rgba(30, 41, 59, 0.65);
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --text: #f8fafc;
+
+    --text-secondary: #cbd5e1;
+
+    --muted: #94a3b8;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    font-family: "Inter", sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(79, 140, 255, 0.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(37, 99, 235, 0.13),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #0b1120 50%,
+            #111827 100%
+        );
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+}
+
+
+.glow-one {
+
+    top: -100px;
+
+    left: -100px;
+
+    background: #2563eb;
+
+}
+
+
+.glow-two {
+
+    right: -100px;
+
+    bottom: -100px;
+
+    background: #4f8cff;
+
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.app {
+
+    width: 100%;
+
+    max-width: 510px;
+
+    padding: 28px;
+
+    position: relative;
+
+    background: rgba(15, 23, 42, 0.72);
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+
+        0 35px 90px rgba(0, 0, 0, 0.5),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.brand-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 23px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #4f8cff,
+            #2563eb
+        );
+
+    box-shadow:
+
+        0 10px 25px rgba(37, 99, 235, 0.3);
+
+}
+
+
+.brand-text h1 {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+
+}
+
+
+.brand-text p {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================
+   LIVE BADGE
+========================================= */
+
+.live-badge {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: rgba(34, 197, 94, 0.07);
+
+    border: 1px solid rgba(34, 197, 94, 0.12);
+
+    color: #86efac;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.live-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+    box-shadow:
+
+        0 0 10px var(--success);
+
+    animation: livePulse 1.5s infinite;
+
+}
+
+
+@keyframes livePulse {
+
+    0% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        transform: scale(0.65);
+
+        opacity: 0.5;
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================
+   CLOCK CARD
+========================================= */
+
+.clock-card {
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    margin-bottom: 18px;
+
+    border-radius: 22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.8),
+            rgba(15, 23, 42, 0.9)
+        );
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+}
+
+
+.clock-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 190px;
+
+    top: -110px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(79, 140, 255, 0.12);
+
+    filter: blur(60px);
+
+}
+
+
+.clock-top {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.clock-icon {
+
+    color: #60a5fa;
+
+    font-size: 15px;
+
+}
+
+
+.clock {
+
+    position: relative;
+
+    margin-top: 12px;
+
+    font-size: clamp(43px, 12vw, 64px);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    line-height: 1.1;
+
+    font-variant-numeric: tabular-nums;
+
+    color: #ffffff;
+
+    text-shadow:
+
+        0 0 30px rgba(79, 140, 255, 0.35);
+
+}
+
+
+.date {
+
+    position: relative;
+
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+}
+
+
+.clock-line {
+
+    width: 60px;
+
+    height: 2px;
+
+    margin: 17px auto 12px;
+
+    border-radius: 10px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #4f8cff,
+            transparent
+        );
+
+}
+
+
+.clock-message {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+}
+
+
+.message-icon {
+
+    color: #60a5fa;
+
+}
+
+
+/* =========================================
+   ALARM CARD
+========================================= */
+
+.alarm-card {
+
+    padding: 23px;
+
+    border-radius: 22px;
+
+    background: rgba(15, 23, 42, 0.65);
+
+    border: 1px solid var(--border);
+
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 22px;
+
+}
+
+
+.section-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #60a5fa;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+}
+
+
+.section-heading p {
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.alarm-badge {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(79, 140, 255, 0.08);
+
+    border: 1px solid rgba(79, 140, 255, 0.1);
+
+    font-size: 19px;
+
+}
+
+
+/* =========================================
+   TIME PICKER
+========================================= */
+
+.time-picker {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 9px;
+
+}
+
+
+.time-field {
+
+    flex: 1;
+
+}
+
+
+.time-field label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.time-separator {
+
+    padding-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+select {
+
+    width: 100%;
+
+    padding: 13px 10px;
+
+    border: 1px solid rgba(148, 163, 184, 0.13);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color: #f8fafc;
+
+    background: #1e293b;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+select:hover {
+
+    border-color: rgba(79, 140, 255, 0.45);
+
+}
+
+
+select:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+
+        0 0 0 3px rgba(79, 140, 255, 0.1);
+
+}
+
+
+select option {
+
+    color: white;
+
+    background: #0f172a;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 19px;
+
+}
+
+
+.btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+.btn-icon {
+
+    font-size: 16px;
+
+}
+
+
+.set-btn {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #4f8cff,
+            #2563eb
+        );
+
+    box-shadow:
+
+        0 8px 20px rgba(37, 99, 235, 0.2);
+
+}
+
+
+.set-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+
+        0 12px 25px rgba(37, 99, 235, 0.35);
+
+}
+
+
+.stop-btn {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #dc2626
+        );
+
+    box-shadow:
+
+        0 8px 20px rgba(220, 38, 38, 0.15);
+
+}
+
+
+.stop-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+
+        0 12px 25px rgba(220, 38, 38, 0.3);
+
+}
+
+
+.btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   STATUS CARD
+========================================= */
+
+.status-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 16px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+}
+
+
+.status-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(79, 140, 255, 0.09);
+
+    color: #60a5fa;
+
+    font-size: 16px;
+
+}
+
+
+.status-info {
+
+    flex: 1;
+
+}
+
+
+.status-info span {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.status-info strong {
+
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.status-indicator {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #64748b;
+
+}
+
+
+.status-indicator.active {
+
+    background: #22c55e;
+
+    box-shadow:
+
+        0 0 10px #22c55e;
+
+}
+
+
+.status-indicator.ringing {
+
+    background: #ef4444;
+
+    box-shadow:
+
+        0 0 12px #ef4444;
+
+    animation: ringPulse 0.6s infinite;
+
+}
+
+
+@keyframes ringPulse {
+
+    50% {
+
+        transform: scale(1.7);
+
+        opacity: 0.5;
+
+    }
+
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 18px;
+
+}
+
+
+.feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+}
+
+
+.feature span {
+
+    color: #22c55e;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 18px;
+
+    color: #475569;
+
+    font-size: 9px;
+
+}
+
+
+.footer-separator {
+
+    color: #334155;
+
+}
+
+
+/* =========================================
+   ALARM RINGING MODE
+========================================= */
+
+body.alarm-ringing .clock-card {
+
+    border-color: rgba(239, 68, 68, 0.5);
+
+    animation: alarmCardPulse 0.8s infinite;
+
+}
+
+
+body.alarm-ringing .clock {
+
+    color: #fca5a5;
+
+}
+
+
+body.alarm-ringing .alarm-badge {
+
+    animation: bellShake 0.5s infinite;
+
+}
+
+
+@keyframes alarmCardPulse {
+
+    50% {
+
+        box-shadow:
+
+            0 0 35px rgba(239, 68, 68, 0.2);
+
+    }
+
+}
+
+
+@keyframes bellShake {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+    body {
+
+        padding: 15px;
+
+        align-items: center;
+
+    }
+
+
+    .app {
+
+        padding: 20px;
+
+        border-radius: 23px;
+
+    }
+
+
+    .brand-icon {
+
+        width: 44px;
+
+        height: 44px;
+
+        font-size: 20px;
+
+    }
+
+
+    .brand-text h1 {
+
+        font-size: 19px;
+
+    }
+
+
+    .clock-card {
+
+        padding: 27px 12px;
+
+    }
+
+
+    .clock {
+
+        font-size: 42px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .alarm-card {
+
+        padding: 18px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 370px) {
+
+    .app {
+
+        padding: 15px;
+
+    }
+
+
+    .live-badge {
+
+        display: none;
+
+    }
+
+
+    .time-picker {
+
+        gap: 5px;
+
+    }
+
+
+    select {
+
+        padding: 11px 5px;
+
+        font-size: 11px;
+
+    }
+
+
+    .buttons {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .features {
+
+        gap: 8px;
+
+    }
+
+}
